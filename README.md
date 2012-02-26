@@ -1,57 +1,37 @@
-USERcycle Ruby API
-==================
-
-The official Ruby library for interacting with the USERcycle REST API. 
-
-USERcycle (http://www.usercycle.com) helps startups engage with their customers 
-by focusing on lifecycle messaging -- sending the right message at the 
-right time -- to convert prospects into customers.
-
-The USERcycle Ruby API gets USERcycle integrated into your website in seconds.
-
-
-Installation
-============
-
-Add the following to your Gemfile
+## Install
 
 ```
-gem 'usercycle'
+$ gem install usercycle
 ```
 
+## Usage
 
-Configuration
-=============
+### Setup
 
-Sign up for a free account on http://www.usercycle.com and create a new product.  Once you 
-do this, you'll configure USERcycle Ruby API as follows:
+``` ruby
+require 'usercycle'
 
-Documentation
-=============
+# put your own credentials here
+api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
-See lib/usercycle.rb
+# set up a client to talk to the USERCycle API
+@client = Usercycle::Client.new api_key
+```
 
-Also, documentation on the REST API can be found at http://docs.usercycle.com/rest_api
-
-
-Examples
-========
-
-List events by identity
+###  List events by identity
 
 ```ruby
-client = Usercycle::Client.new(API_KEY)
-client.event.find_by_identity('john.smith@example.com')
+@client = Usercycle::Client.new(API_KEY)
+@client.event.find_by_identity('john.smith@example.com')
 ```
 
-Creating an event
+### Creating an event
 
 ```ruby
-client = Usercycle::Client.new(API_KEY)
-client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
+@client = Usercycle::Client.new(API_KEY)
+@client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
 ```
 
-License
-=======
+## Full Documentation
 
-Copyright (c) 2010 USERcycle, Inc. Released under the MIT license
+For full API documentation visit the official USERCycle docs at http://docs.usercycle.com/rest_api
