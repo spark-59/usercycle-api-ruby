@@ -21,14 +21,12 @@ api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 ###  List events by identity
 
 ```ruby
-@client = Usercycle::Client.new(API_KEY)
 @client.event.find_by_identity('john.smith@example.com')
 ```
 
 ### Creating an event
 
 ```ruby
-@client = Usercycle::Client.new(API_KEY)
 @client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
 ```
 
