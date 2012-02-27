@@ -21,13 +21,17 @@ api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 ###  List events by identity
 
 ```ruby
-@client.event.find_by_identity('john.smith@example.com')
+identity = 'john.smith@example.com' #required
+@client.event.find_by_identity(identity)
 ```
 
 ### Creating an event
 
 ```ruby
-@client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
+identity = 'john.smith@example.com' #required
+action = 'signed_up' #required
+properties = { :first_name => 'John', :last_name => 'Smith' } #optional
+@client.event.create(identity, action, properties)
 ```
 
 ## Full Documentation
