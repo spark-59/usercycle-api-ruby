@@ -7,7 +7,7 @@ module Usercycle
   
   class Client
     
-    def initialize(key)
+    def initialize(key, host)
       @api_key = key
       self.class.headers 'X-Usercycle-API-Key' => @api_key
     end
@@ -15,7 +15,7 @@ module Usercycle
     include HTTParty
     include Event
 
-    base_uri "https://api.usercycle.com/api/v1"
+    base_uri host
     format :json
   end
 end
