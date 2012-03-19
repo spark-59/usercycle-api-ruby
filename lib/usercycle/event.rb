@@ -1,3 +1,5 @@
+require 'timeout'
+
 module Usercycle
   module Event
     
@@ -30,7 +32,14 @@ module Usercycle
                     :identity => identity,
                     :action_name => action_name,
                     :properties => properties }}
-        @client.class.post('/events.json', options)
+        begin
+          timeout(1) do
+            @client.class.post('/events.json', options)
+          end
+        rescue Timeout::Error
+          false
+        end
+        
       end
     end
   end
