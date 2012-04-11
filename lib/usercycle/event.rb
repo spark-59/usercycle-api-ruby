@@ -36,6 +36,8 @@ module Usercycle
           timeout(1) do
             @client.class.post('/events.json', options)
           end
+        rescue SocketError
+          false
         rescue Timeout::Error
           false
         end
