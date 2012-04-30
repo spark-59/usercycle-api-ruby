@@ -38,8 +38,8 @@ module Usercycle
             @client.class.post('/events.json', options)
           end
         rescue SocketError
-          false
         rescue Timeout::Error
+        rescue Errno::ECONNREFUSED
           false
         end
         
