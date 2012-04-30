@@ -31,7 +31,8 @@ identity = 'john.smith@example.com' #required
 identity = 'john.smith@example.com' #required
 action = 'signed_up' #required
 properties = { :first_name => 'John', :last_name => 'Smith' } #optional
-@client.event.create(identity, action, properties)
+occurred_at = 5.days.ago #optional
+@client.event.create(identity, action, properties, occurred_at)
 ```
 
 ## Full Documentation
