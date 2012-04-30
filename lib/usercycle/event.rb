@@ -27,11 +27,12 @@ module Usercycle
       #  client = Usercycle::Client.new(API_KEY)
       #  client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
       #
-      def create(identity, action_name, properties={})
+      def create(identity, action_name, properties={}, occurred_at = nil)
         options = { :body => {
                     :identity => identity,
                     :action_name => action_name,
-                    :properties => properties }}
+                    :properties => properties,
+                    :occurred_at => occurred_at }}
         begin
           timeout(1) do
             @client.class.post('/events.json', options)
