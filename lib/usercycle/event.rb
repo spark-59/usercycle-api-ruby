@@ -41,6 +41,11 @@ module Usercycle
         rescue Timeout::Error
         rescue Errno::ECONNREFUSED
           false
+        rescue => e
+          if defined?(Rails.logger)
+            Rails.logger.error e.inspect
+          end
+          false
         end
         
       end
