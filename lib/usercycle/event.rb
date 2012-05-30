@@ -34,7 +34,7 @@ module Usercycle
                     :properties => properties,
                     :occurred_at => occurred_at }}
         begin
-          timeout(1) do
+          timeout(3) do
             @client.class.post('/events.json', options)
           end
         rescue SocketError
