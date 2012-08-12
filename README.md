@@ -1,7 +1,9 @@
 ## Install
 
+Add to Gemfile:
+
 ```
-$ gem install usercycle
+gem 'usercycle', :git => 'git://github.com/usercycle/usercycle-api-ruby.git'
 ```
 
 ## Usage
