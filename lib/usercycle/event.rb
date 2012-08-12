@@ -38,9 +38,7 @@ module Usercycle
           timeout(3) do
             @client.class.post('/events.json', options)
           end
-        rescue SocketError
-        rescue Timeout::Error
-        rescue Errno::ECONNREFUSED
+        rescue SocketError, Timeout::Error, Errno::ECONNREFUSED
           false
         rescue => e
           if defined?(Rails.logger)

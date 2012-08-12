@@ -36,6 +36,9 @@ properties = { :first_name => 'John', :last_name => 'Smith' } #optional
 occurred_at = 5.days.ago #optional
 @client.event.create(identity, action, properties, occurred_at)
 ```
+`#create` will return false if there was a communication error. If it's
+critical this data get into USERcycle, you should retry the operation.
+
 ### Getting an event
 
 ```ruby
