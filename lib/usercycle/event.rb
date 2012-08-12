@@ -25,7 +25,8 @@ module Usercycle
       # Creating an event
       #
       #  client = Usercycle::Client.new(API_KEY)
-      #  client.event.create('john.smith@example.com', 'signed_up', :first_name => 'John', :last_name => 'Smith'
+      #  client.event.create('john.smith@example.com', 'signed_up',
+      #                      { first_name: 'John', last_name: 'Smith' }, DateTime.now)
       #
       def create(identity, action_name, properties={}, occurred_at = nil)
         options = { :body => {
@@ -47,7 +48,15 @@ module Usercycle
           end
           false
         end
-        
+      end
+
+      # Getting an event
+      #
+      # client = Usercycle::Client.new(API_KEY)
+      # client.event.get(uuid)
+      #
+      def get(uuid)
+        @client.class.get("/events/#{uuid}.json")
       end
     end
   end

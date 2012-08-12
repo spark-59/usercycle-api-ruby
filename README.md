@@ -14,7 +14,7 @@ require 'usercycle'
 # put your own credentials here
 api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
-# set up a client to talk to the USERCycle API
+# set up a client to talk to the USERcycle API
 @client = Usercycle::Client.new api_key
 ```
 
@@ -34,7 +34,13 @@ properties = { :first_name => 'John', :last_name => 'Smith' } #optional
 occurred_at = 5.days.ago #optional
 @client.event.create(identity, action, properties, occurred_at)
 ```
+### Getting an event
+
+```ruby
+@client.event.get(uuid)
+```
 
 ## Full Documentation
 
-For full API documentation visit the official USERCycle docs at http://docs.usercycle.com/rest_api
+For full API documentation visit the official USERcycle docs at http://docs.usercycle.com/rest_api
+

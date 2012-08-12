@@ -2,15 +2,10 @@
 require File.expand_path('../lib/usercycle/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Caleb Woods"]
-  gem.email         = ["calebawoods@gmail.com"]
-  gem.description   = %q{Ruby Libray for interating with the USERCycle API}
-  gem.summary       = %q{Library based of original rails plugin https://github.com/usercycle/usercycle-ruby-api}
-  gem.homepage      = ""
-
-  # gem.executables   = 'git ls-files -- bin/*'.split("\n").map{ |f| File.basename(f) }
-  # gem.files         = 'git ls-files'.split("\n")
-  # gem.test_files    = 'git ls-files -- {test,spec,features}/*'.split("\n")
+  gem.authors       = ['Caleb Woods', 'Steve Odom', 'Ry Walker']
+  gem.email         = ['team@usercycle.com']
+  gem.summary       = %q{Ruby library for interating with the USERcycle API}
+  gem.homepage      = 'https://github.com/usercycle/usercycle-api-ruby'
   gem.name          = "usercycle"
   gem.require_paths = ["lib"]
   gem.version       = Usercycle::VERSION
