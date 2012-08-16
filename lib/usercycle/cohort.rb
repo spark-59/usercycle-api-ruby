@@ -31,7 +31,7 @@ module Usercycle
       #  client.cohort.get_weekly(start_date, [count])
       #
       def get_weekly(start_date, count = 4)
-        date = formatted_date(Usercycle::Cohort::GetPreviousMonday.new(start_date).monday)
+        date = formatted_date(Usercycle::Cohort::GetPreviousMonday.new(start_date).get)
         @client.class.get("/cohorts/weekly/#{date}.json?count=#{count}")
       end
 

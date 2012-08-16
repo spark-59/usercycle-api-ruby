@@ -6,7 +6,7 @@ module Usercycle
         @date = date
       end
 
-      def monday
+      def get
         day_of_week = @date.wday
         if day_of_week == 0
           return @date - 6*24*3600
