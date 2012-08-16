@@ -7,7 +7,7 @@ module Usercycle
       end
 
       def get
-        Time.new(@date.year, @date.month, 1) 
+        Time.new(@date.year, @date.month, 1)
       end
     end
   end

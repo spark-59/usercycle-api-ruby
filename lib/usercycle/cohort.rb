@@ -4,17 +4,17 @@ require 'usercycle/cohort/get_first_of_month'
 
 module Usercycle
   module Cohort
-    
+
     def cohort
       @cohort ||= Cohort.new self
     end
-    
+
     class Cohort
-      
-      def initialize(client)
+
+     def initialize(client)
         @client = client
       end
-      
+
       # Get daily cohort data
       #
       #  client = Usercycle::Client.new(API_KEY)
