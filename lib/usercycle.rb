@@ -1,7 +1,7 @@
-require "httparty"
-require "usercycle/version"
-require "usercycle/event"
-
+require 'httparty'
+require 'usercycle/version'
+require 'usercycle/event'
+require 'usercycle/cohort'
 
 module Usercycle
   
@@ -15,6 +15,7 @@ module Usercycle
     
     include HTTParty
     include Event
+    include Cohort
     format :json
   end
 end

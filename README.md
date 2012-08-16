@@ -1,3 +1,5 @@
+For full API documentation visit the official USERcycle docs at http://docs.usercycle.com/rest_api
+
 ## Install
 
 Add to Gemfile:
@@ -6,9 +8,7 @@ Add to Gemfile:
 gem 'usercycle', :git => 'git://github.com/usercycle/usercycle-api-ruby.git'
 ```
 
-## Usage
-
-### Setup
+## Setup
 
 ``` ruby
 require 'usercycle'
@@ -20,14 +20,16 @@ api_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 @client = Usercycle::Client.new api_key
 ```
 
-###  List events by identity
+## Events
+
+### Find by identity
 
 ```ruby
 identity = 'john.smith@example.com' #required
 @client.event.find_by_identity(identity)
 ```
 
-### Creating an event
+### Create
 
 ```ruby
 identity = 'john.smith@example.com' #required
@@ -39,13 +41,34 @@ occurred_at = 5.days.ago #optional
 `#create` will return false if there was a communication error. If it's
 critical this data get into USERcycle, you should retry the operation.
 
-### Getting an event
+### Get
 
 ```ruby
 @client.event.get(uuid)
 ```
 
-## Full Documentation
+## People
 
-For full API documentation visit the official USERcycle docs at http://docs.usercycle.com/rest_api
+Coming soon.
+
+## Cohorts
+
+Cohorts are used to group your users and track their actions over time.
+There are 3 types of cohort intervals - daily, weekly, and monthly.
+
+### Get
+
+Returns the last four sets of cohort metrics from the specified
+starting date. You can override the count by passing an optional second
+parameter.
+
+We will automatically adjust passed dates to conform to the API
+requirements for weekly (date must be a Monday) and monthly (date must
+be the 1st of the month).
+
+```ruby
+@client.cohort.get_daily(start_date, [count])
+@client.cohort.get_weekly(start_date, [count])
+@client.cohort.get_monthly(start_date, [count])
+```
 
