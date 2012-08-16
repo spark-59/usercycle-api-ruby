@@ -3,7 +3,7 @@ require File.expand_path('../lib/usercycle/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec', '~> 2.11'
-  gem.add_development_depenedency 'rspec-given', '~> 1.4.0'
+  gem.add_development_dependency 'rspec-given', '~> 1.4.0'
   gem.add_development_dependency 'webmock', '~> 1.6'
 
   gem.authors       = ['Caleb Woods', 'Steve Odom', 'Ry Walker']
