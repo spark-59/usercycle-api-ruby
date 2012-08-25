@@ -6,6 +6,7 @@ require 'usercycle/cohort'
 module Usercycle
   
   class Client
+    attr_accessor :api_key
     
     def initialize(key, host = nil)
       @api_key = key

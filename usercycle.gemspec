@@ -6,9 +6,9 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rspec-given', '~> 1.4.0'
   gem.add_development_dependency 'webmock', '~> 1.6'
 
-  gem.authors       = ['Caleb Woods', 'Steve Odom', 'Ry Walker']
-  gem.email         = ['team@usercycle.com']
-  gem.summary       = 'Ruby library for interating with the USERcycle API'
+  gem.authors       = ['Caleb Woods', 'Steve Odom', 'Ry Walker', 'Lukas Fittl']
+  gem.email         = ['team@spark59.com']
+  gem.summary       = 'Ruby library for integrating with the USERcycle API'
   gem.homepage      = 'https://github.com/usercycle/usercycle-api-ruby'
   gem.name          = 'usercycle'
   gem.require_paths = ['lib']
