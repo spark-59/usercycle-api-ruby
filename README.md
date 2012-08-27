@@ -84,8 +84,8 @@ to one of the following macros:
 * billed
 
 ```ruby
-@client.cohort.users.get_daily(start_date, [macro])
-@client.cohort.users.get_weekly(start_date, [macro])
-@client.cohort.users.get_monthly(start_date [macro])
+@client.cohort.people.get_daily(start_date, [macro])
+@client.cohort.people.get_weekly(start_date, [macro])
+@client.cohort.people.get_monthly(start_date [macro])
 ```
 

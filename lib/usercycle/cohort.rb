@@ -1,4 +1,5 @@
 require 'usercycle/cohort/stats'
+require 'usercycle/cohort/people'
 
 module Usercycle
   module Cohort
@@ -13,6 +14,7 @@ module Usercycle
       end
 
       include Stats
+      include People
     end
   end
 end
