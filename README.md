@@ -56,7 +56,7 @@ Coming soon.
 Cohorts are used to group your users and track their actions over time.
 There are 3 types of cohort intervals - daily, weekly, and monthly.
 
-### Get
+### Stats
 
 Returns the last four sets of cohort metrics from the specified
 starting date. You can override the count by passing an optional second
@@ -67,8 +67,25 @@ requirements for weekly (date must be a Monday) and monthly (date must
 be the 1st of the month).
 
 ```ruby
-@client.cohort.get_daily(start_date, [count])
-@client.cohort.get_weekly(start_date, [count])
-@client.cohort.get_monthly(start_date, [count])
+@client.cohort.stats.get_daily(start_date, [count])
+@client.cohort.stats.get_weekly(start_date, [count])
+@client.cohort.stats.get_monthly(start_date, [count])
+```
+
+### Users
+
+You can also retrieve a list of users who belong to a cohort according
+to one of the following macros:
+
+* AARRR (default)
+* activated
+* retained
+* trial
+* billed
+
+```ruby
+@client.cohort.users.get_daily(start_date, [macro])
+@client.cohort.users.get_weekly(start_date, [macro])
+@client.cohort.users.get_monthly(start_date [macro])
 ```
 

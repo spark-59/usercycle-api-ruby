@@ -1,6 +1,6 @@
 require 'helper'
 
-describe Usercycle::Cohort do
+describe Usercycle::Cohort::Stats do
 
   describe '#get_daily' do
     before do
@@ -13,7 +13,7 @@ describe Usercycle::Cohort do
 
     context do
       Given(:client) { Usercycle::Client.new('key') }
-      Given(:response) { client.cohort.get_daily(Time.new(2012,8,13)) }
+      Given(:response) { client.cohort.stats.get_daily(Time.new(2012,8,13)) }
       Then { response.body.should_not be_empty }
     end
   end
@@ -29,7 +29,7 @@ describe Usercycle::Cohort do
 
     context do
       Given(:client) { Usercycle::Client.new('key') }
-      Given(:response) { client.cohort.get_weekly(Time.new(2012,8,13)) }
+      Given(:response) { client.cohort.stats.get_weekly(Time.new(2012,8,13)) }
       Then { response.body.should_not be_empty }
     end
   end
@@ -45,7 +45,7 @@ describe Usercycle::Cohort do
 
     context do
       Given(:client) { Usercycle::Client.new('key') }
-      Given(:response) { client.cohort.get_monthly(Time.new(2012,8,13)) }
+      Given(:response) { client.cohort.stats.get_monthly(Time.new(2012,8,13)) }
       Then { response.body.should_not be_empty }
     end
   end

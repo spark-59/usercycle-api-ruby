@@ -2,17 +2,17 @@ require 'timeout'
 
 module Usercycle
   module Event
-    
+
     def event
       @event ||= Event.new self
     end
-    
+
     class Event
-      
+
       def initialize(client)
         @client = client
       end
-      
+
       # List events by identity
       #
       #  client = Usercycle::Client.new(API_KEY)
@@ -59,3 +59,4 @@ module Usercycle
     end
   end
 end
+

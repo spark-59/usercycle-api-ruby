@@ -1,14 +1,14 @@
 require 'helper'
 
 describe Usercycle::Cohort::GetPreviousMonday do
-  
+
   context "Passing in a Sunday" do
     Given(:date) do
       # August 12, 2012 was a Sunday
       Usercycle::Cohort::GetPreviousMonday.new( Time.new(2012,8,12)).get
     end
     Then { date.day.should == 6 }
-    Then { date.wday.should == 1 } 
+    Then { date.wday.should == 1 }
   end
 
   context "Passing in a Monday" do
@@ -17,7 +17,7 @@ describe Usercycle::Cohort::GetPreviousMonday do
       Usercycle::Cohort::GetPreviousMonday.new(Time.new(2012,8,13)).get
     end
     Then { date.day.should == 13 }
-    Then { date.wday.should == 1 } 
+    Then { date.wday.should == 1 }
   end
 
   context "Passing in a Tuesday" do
@@ -26,7 +26,7 @@ describe Usercycle::Cohort::GetPreviousMonday do
       Usercycle::Cohort::GetPreviousMonday.new(Time.new(2012,8,14)).get
     end
     Then { date.day.should == 13 }
-    Then { date.wday.should == 1 } 
+    Then { date.wday.should == 1 }
   end
 
   context "Passing in a Wednesday" do
@@ -35,7 +35,7 @@ describe Usercycle::Cohort::GetPreviousMonday do
       Usercycle::Cohort::GetPreviousMonday.new(Time.new(2012,8,15)).get
     end
     Then { date.day.should == 13 }
-    Then { date.wday.should == 1 } 
+    Then { date.wday.should == 1 }
   end
 end
 
