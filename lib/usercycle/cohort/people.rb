@@ -16,19 +16,19 @@ module Usercycle
           @client = client
         end
 
-        def get_daily(start_date, macro = 'AARRR')
+        def get_daily(start_date, macro = 'AARRR', event = 'signed_up')
           date = Usercycle::Cohort::FormatDate.new(start_date).get
-          @client.class.get("/cohorts/daily/#{date}/people.json?macro=#{macro}")
+          @client.class.get("/cohorts/daily/#{date}/people.json?macro=#{macro}&event=#{event}")
         end
 
-        def get_weekly(start_date, macro = 'AARRR')
+        def get_weekly(start_date, macro = 'AARRR', event = 'signed_up')
           date = Usercycle::Cohort::FormatDate.new(Usercycle::Cohort::GetPreviousMonday.new(start_date).get).get
-          @client.class.get("/cohorts/weekly/#{date}/people.json?macro=#{macro}")
+          @client.class.get("/cohorts/weekly/#{date}/people.json?macro=#{macro}&event=#{event}")
         end
 
-        def get_monthly(start_date, macro = 'AARRR')
+        def get_monthly(start_date, macro = 'AARRR', event = 'signed_up')
           date = Usercycle::Cohort::FormatDate.new(Usercycle::Cohort::GetFirstOfMonth.new(start_date).get).get
-          @client.class.get("/cohorts/monthly/#{date}/people.json?macro=#{macro}")
+          @client.class.get("/cohorts/monthly/#{date}/people.json?macro=#{macro}&event=#{event}")
         end
       end
     end

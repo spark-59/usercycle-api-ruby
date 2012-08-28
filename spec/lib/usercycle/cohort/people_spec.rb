@@ -4,7 +4,7 @@ describe Usercycle::Cohort::People do
 
   describe '#get_daily' do
     before do
-      stub_get("cohorts/daily/2012-08-13/people.json?macro=AARRR").
+      stub_get("cohorts/daily/2012-08-13/people.json?macro=AARRR&event=signed_up").
              with(:headers => {'X-Usercycle-Api-Key'=>'key'}).
              to_return(:status => 200, :body => "", :headers => {})
     end
@@ -18,7 +18,7 @@ describe Usercycle::Cohort::People do
 
   describe '#get_weekly' do
     before do
-      stub_get("cohorts/weekly/2012-08-13/people.json?macro=AARRR").
+      stub_get("cohorts/weekly/2012-08-13/people.json?macro=AARRR&event=signed_up").
              with(:headers => {'X-Usercycle-Api-Key'=>'key'}).
              to_return(:status => 200, :body => "", :headers => {})
     end
@@ -32,7 +32,7 @@ describe Usercycle::Cohort::People do
 
   describe '#get_monthly' do
     before do
-      stub_get("cohorts/monthly/2012-08-01/people.json?macro=AARRR").
+      stub_get("cohorts/monthly/2012-08-01/people.json?macro=AARRR&event=signed_up").
              with(:headers => {'X-Usercycle-Api-Key'=>'key'}).
              to_return(:status => 200, :body => "", :headers => {})
     end
