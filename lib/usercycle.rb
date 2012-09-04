@@ -7,7 +7,7 @@ module Usercycle
 
   class Client
     attr_accessor :api_key
-    
+
     def initialize(key, host = nil)
       @api_key = key
       self.class.headers 'X-Usercycle-API-Key' => @api_key
@@ -18,6 +18,8 @@ module Usercycle
     include Event
     include Cohort
     format :json
+
+    default_timeout 10
   end
 end
 
