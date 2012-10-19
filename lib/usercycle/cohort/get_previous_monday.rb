@@ -1,7 +1,6 @@
 module Usercycle
   module Cohort
     class GetPreviousMonday
-
       def initialize(date)
         @date = date
       end

@@ -2,13 +2,11 @@ require 'timeout'
 
 module Usercycle
   module Event
-
     def event
       @event ||= Event.new self
     end
 
     class Event
-
       def initialize(client)
         @client = client
       end
@@ -19,7 +17,7 @@ module Usercycle
       #  client.event.find_by_identity('john.smith@example.com')
       #
       def find_by_identity(identity, options={})
-        @client.class.get("/events.json?identity=#{identity}", options)
+        @client.class.get("/events.json?identity=#{identity}", @client.options.merge(options))
       end
 
       # Creating an event
@@ -36,7 +34,7 @@ module Usercycle
                     :occurred_at => occurred_at }}
         begin
           timeout(10) do
-            @client.class.post('/events.json', options)
+            @client.class.post('/events.json', @client.options.merge(options))
           end
         rescue => e
           if defined?(Rails.logger)
@@ -52,7 +50,7 @@ module Usercycle
       # client.event.get(uuid)
       #
       def get(uuid)
-        @client.class.get("/events/#{uuid}.json")
+        @client.class.get("/events/#{uuid}.json", @client.options)
       end
     end
   end
