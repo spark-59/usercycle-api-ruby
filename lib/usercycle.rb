@@ -16,10 +16,12 @@ module Usercycle
     default_timeout 10
     
     def initialize(key, host = nil)
+      host ||= "api.usercycle.com/api/v1"
+      host = "http://" + host unless host[/http(s)\:\/\//]
+      
       @api_key = key
-      @options = {}
-      @options[:headers] = {'X-Usercycle-API-Key' => @api_key}
-      @options[:base_uri] = host || "http://api.usercycle.com/api/v1"
+      @options = {:headers => {'X-Usercycle-API-Key' => @api_key},
+                  :base_uri => host}
     end
   end
 end
