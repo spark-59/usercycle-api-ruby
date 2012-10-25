@@ -26,7 +26,7 @@ module Usercycle
       #  client.event.create('john.smith@example.com', 'signed_up',
       #                      { first_name: 'John', last_name: 'Smith' }, DateTime.now)
       #
-      def create(identity, action_name, properties={}, occurred_at = nil)
+      def create(identity, action_name, properties={}, occurred_at = Time.now)
         options = { :body => {
                     :identity => identity,
                     :action_name => action_name,
