@@ -2,9 +2,9 @@ require 'helper'
 
 describe Usercycle::Person do
 
-  describe '#find_by_identity' do
+  describe '#find_by_id' do
     before do
-      stub_get("people.json?id=42").
+      stub_get("people/42.json").
         with(:headers => {'X-Usercycle-Api-Key'=>'key'}).
         to_return(:status => 200, :body => "", :headers => {})
     end

@@ -10,7 +10,7 @@ module Usercycle
       end
 
       def find_by_id(id, options={})
-        @client.class.get("/people.json?id=#{id}", @client.options.merge(options))
+        @client.class.get("/people/#{id}.json", @client.options.merge(options))
       end
 
       def find_by_identity(identity, options={})
