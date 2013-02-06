@@ -89,3 +89,7 @@ to one of the following macros:
 @client.cohort.people.get_monthly(start_date [macro])
 ```
 
+### License
+
+usercycle-api-ruby is licensed under the 3-clause BSD license, see LICENSE file for details.
+
