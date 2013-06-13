@@ -19,7 +19,7 @@ module Usercycle
 
     def initialize(key, host = nil)
       host ||= "api.usercycle.com/api/v1"
-      host = "http://" + host unless host[/http(s)\:\/\//]
+      host = "http://" + host unless host[/http(s?)\:\/\//]
 
       @api_key = key
       @options = {:headers => {'X-Usercycle-API-Key' => @api_key},
